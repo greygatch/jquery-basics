@@ -1,19 +1,87 @@
-body{
-  color: hsla(52, 100%, 20%, 1.0);
-  background-color: #FFDC00;
+@import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow);
+
+body, div, a {
+    padding:0;
+    margin:0;
+    font-family: 'PT Sans Narrow', sans-serif;
 }
 
-#apollo{
-  border: 5px solid hsla(52, 100%, 20%, 1.0);
-  width: 150px;
-  height: 225px;
+#calculator {
+	background-color: #0b2c48;
+	width: 510px;
+	height: 375px;
+	border: 3px black solid;
+	margin: 10px auto;
+	padding: 5px;
+  margin-top: 30px;
+	border-radius: 3px;
+  box-shadow: 7px 7px 30px 7px;
+  margin-top: 325px;
+  border-radius: 5px;
 }
 
-#title{
-  position: relative;
-  top: -170px;
-  left: 200px;
-  font-family: monospace;
-  letter-spacing: 10px;
-  font-size: 40px;
+#total {
+    height: 70px;
+    width: 495px;
+    margin:auto;
+    background: -webkit-gradient(linear, left top, left bottom, from(#EDEDED), to(#DCDCDC));
+  	background: -moz-linear-gradient(top, #94c8ff, #ffffff);
+    margin-bottom: 5px;
+    text-align: right;
+    font-size: 60px;
+    padding: 0 5px;
+    border-radius: 5px;
+}
+
+#numbers, #operators {
+	margin: auto;
+}
+
+#numbers a {
+	display: block;
+	width: 32%;
+	height: 30%;
+	float: left;
+	text-decoration: none;
+	color: black;
+	text-align: center;
+	font-size: 39px;
+	padding: 2px;
+	margin: 0;
+	background-color: silver;
+  border: 2px solid black;
+	border-radius: 3px;
+  box-shadow: 0 0 5px;
+}
+
+#numbers a:hover {
+  background-color: black;
+  color: white;
+}
+
+#operators {
+  padding-left: 0;
+}
+
+.operator {
+	display: block;
+	width: 22%;
+	height: 35%;
+	float: left;
+	text-decoration: none;
+	color: black;
+	text-align: center;
+	font-size: 39px;
+	padding: 2px;
+	margin: 1px;
+  border: 5px solid black;
+	border-radius: 3px;
+  margin-top: 10px;
+  background-color: silver;
+  box-shadow: 0 0 5px;
+}
+
+#operators a:hover {
+  background-color: black;
+  color: white;
 }

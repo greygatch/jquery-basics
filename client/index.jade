@@ -7,8 +7,31 @@ html
     link(rel='stylesheet', href=isProd ? '/index.min.css' : '/index.css')
     link(rel='shortcut icon', href='/favicon.ico')
   body
-    h1 jQuery Demo
     
+    #calculator
+      #total
+        a#numfield
+        
+      #numbers
+        a.num 7
+        a.num 8
+        a.num 9
+        a.num 4
+        a.num 5
+        a.num 6
+        a.num 1
+        a.num 2
+        a.num 3
+        a#clear C
+        a.num 0
+        a#equal =
+                   
+      #operators
+        a.operator +
+        a.operator -
+        a.operator *
+        a.operator /
     script(src='/vendor/jquery/dist/jquery.min.js')
     script(src='/vendor/lodash/lodash.min.js')
     script(src=isProd ? '/index.min.js' : '/index.js')
+      
