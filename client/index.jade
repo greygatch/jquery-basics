@@ -9,28 +9,34 @@ html
   body
     
     #calculator
-      #total
-        a#numfield
+      #display
         
       #numbers
-        a.num 7
-        a.num 8
-        a.num 9
-        a.num 4
-        a.num 5
-        a.num 6
-        a.num 1
-        a.num 2
-        a.num 3
-        a#clear C
-        a.num 0
-        a#equal =
-                   
-      #operators
+        a.number 7
+        a.number 8
+        a.number 9
         a.operator +
+        a.number 4
+        a.number 5
+        a.number 6
         a.operator -
-        a.operator *
+        a.number 1
+        a.number 2
+        a.number 3git 
         a.operator /
+        a#decimal.operator .
+        a.number 0
+        a#clear C
+        a.operator *
+        a#square.operator x&#178
+        a#root.operator &#8730;
+        a#factorial.operator n!
+        a#equal = 
+        
+        
+        
+        
+        
     script(src='/vendor/jquery/dist/jquery.min.js')
     script(src='/vendor/lodash/lodash.min.js')
     script(src=isProd ? '/index.min.js' : '/index.js')
