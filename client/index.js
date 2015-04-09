@@ -9,7 +9,8 @@ $(document).ready(init);
 function init(){
   $('.number').click(clickNumber);
   $('#decimal').click(clickDecimal);
-  $('#display').click(clear);
+  $('#clear').click(clear);
+  // rename compound
   $('.operator').click(compound);
   $('#equal').click(calculation);
   $('#square').click(calculation)
@@ -30,22 +31,28 @@ function clickNumber(){
 
 
 function clickDecimal(){
+  console.log("b");
   var display = $('#display').text();
+  console.log(display)
   var output = display.indexOf('.') !== -1 ? display : display += '.';
-  $('#display').text(output);
+  $('#display').text(output.toString());
+  console.log(output);
+
+
 }
 
 function clear(){
-  $('#display').text('0');
+  $('#display').text('0');clear
 }
 
 function compound(){
+  console.log("comp")
   firstNumber = parseFloat($('#display').text());
   operator = $(this).text();
   clear();
 }
 
-//recursive
+//recursive=
 var factorial = function(n) {
   var firstNumber = parseFloat($('#display').text());
   operator = $(this).text();
@@ -69,6 +76,26 @@ function root(){
   return firstNumber * firstNumber;
 }
 
+function toUTF16(codePoint) {
+    var TEN_BITS = parseInt('1111111111', 2);
+    function u(codeUnit) {
+        return '\\u'+codeUnit.toString(16).toUpperCase();
+    }
+
+    if (codePoint <= 0xFFFF) {
+        return u(codePoint);
+    }
+    codePoint -= 0x10000;
+
+    // Shift right to get to most significant 10 bits
+    var leadSurrogate = 0xD800 + (codePoint >> 10);
+
+    // Mask to get least significant 10 bits
+    var tailSurrogate = 0xDC00 + (codePoint & TEN_BITS);
+
+    return u(leadSurrogate) + u(tailSurrogate);
+}
+
 function calculation(){
   var result;
   var secondNumber = parseFloat($('#display').text());
@@ -85,16 +112,16 @@ function calculation(){
     case ("/"):
       result = firstNumber / secondNumber;
       break;
-    case ("x&#178"):
+    case ('x²'):
       result = firstNumber * firstNumber;
       break;
-    case ("&#8730"):
+    case ('√'):
       result = root(firstNumber);
       break;
     case ("n!"):
       result = factorial(firstNumber);
-      break;
   }
+
   $('#display').text(result)
   firstNumber = 0;
   recentCalc = true;
