@@ -2,42 +2,49 @@ doctype html
 html
   head
     meta(charset='utf-8')      
-    title jQuery Demo
+    title Calculator
     link(rel='stylesheet', href='/vendor/font-awesome/css/font-awesome.min.css')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css')
     link(rel='stylesheet', href=isProd ? '/index.min.css' : '/index.css')
     link(rel='shortcut icon', href='/favicon.ico')
   body
     
     #calculator
-      #display
+      #display.col-xs-2.col-xs-offset-5
+        p test
         
-      #numbers
-        a.number 7
-        a.number 8
-        a.number 9
-        a.operator +
-        a.number 4
-        a.number 5
-        a.number 6
-        a.operator -
-        a.number 1
-        a.number 2
-        a.number 3
-        a.operator /
-        a#decimal .
-        a.number 0
-        a#clear C
-        a.operator *
-        a#square(value='square') x&#178
-        a#root(value='root') &#8730;
-        a#factorial.operator n!
-        a#equal = 
+      .col-xs-4.col-xs-offset-4
+        button.btn.number 7
+        button.btn.number 8
+        button.btn.number 9
+        button.btn.operator(value='divide') /
+      .col-xs-4.col-xs-offset-4
+        button.btn.number 4
+        button.btn.number 5
+        button.btn.number 6
+        button.btn.operator(value='multiply') *
+      .col-xs-4.col-xs-offset-4
+        button.btn.number 1
+        button.btn.number 2
+        button.btn.number 3
+        button.btn.operator(value='minus') -
+      .col-xs-4.col-xs-offset-4
+        button.btn#decimal .
+        button.btn.number 0
+        button.btn#clear AC
+        button.btn.operator(value='plus') +
+      .col-xs-4.col-xs-offset-4
+        button.btn.operator#square(value='square') SQ
+        button.btn.operator#root(value='root') ROOT
+        button.btn.operator#factorial(value='factorial') n!
+        button.btn#equal = 
         
         
         
         
         
     script(src='/vendor/jquery/dist/jquery.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js')
     script(src='/vendor/lodash/lodash.min.js')
     script(src=isProd ? '/index.min.js' : '/index.js')
       
