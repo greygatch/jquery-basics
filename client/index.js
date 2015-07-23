@@ -3,6 +3,7 @@
 var firstNumber = 0;
 var operator = '';
 var recentCalc = false;
+$('#display').text('0');
 
 $(document).ready(init);
 
